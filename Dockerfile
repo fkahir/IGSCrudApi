@@ -6,6 +6,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["IGSCrud/IGSCrud.csproj", "IGSCrud/"]
+COPY ["IGSCrud.Application/IGSCrud.Application.csproj", "IGSCrud.Application/"]
+COPY ["IGSCrud.Persistence/IGSCrud.Persistence.csproj", "IGSCrud.Persistence/"]
 RUN dotnet restore "IGSCrud/IGSCrud.csproj"
 
 COPY . .
@@ -19,4 +21,3 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "IGSCrud.dll"]
-EXPOSE 1433
