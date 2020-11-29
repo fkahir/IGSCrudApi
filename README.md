@@ -46,11 +46,11 @@ The server name `db` refers to the service created in the docker-compose file.
 
 Using your command line editor, navigate to the directory containing the DockerFile file, and run the following command:
 
-`docker-compose up`
+`docker-compose build`
 
 Once this is complete, you can run with the following command:
 
-`docker-compose build`
+`docker-compose up`
 
 This will start the API. You can navigate to [http://localhost:9080/swagger](http://localhost:9080/swagger) and you can see the API documentation.
 
